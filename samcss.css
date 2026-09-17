@@ -1,0 +1,1346 @@
+
+/*Right Side image collage Home page*/
+/* Container simulating Bootstrap col-6 */
+    .col-6-sim {
+      width: 100%;
+      max-width: 720px; /* max width */
+      height: 40vw; /* relative height to viewport width for responsiveness */
+      max-height: 320px;
+      margin: 30px auto;
+      position: relative;
+      overflow: visible;
+      border-radius: 16px;
+      background: #f7f9fc;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding-bottom: 5vw;
+      box-sizing: border-box;
+    }
+
+    /* Container for stacking images */
+    .stack-container {
+      position: relative;
+      width: 86%; /* relative width */
+      height: 100%;
+      overflow: visible;
+    }
+
+    /* Each image in stack */
+    .stack-container img {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 40vw;  /* responsive width */
+      max-width: 320px; /* max width to limit on large screens */
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      opacity: 0;
+      transform: translateX(-50%) translateY(-20vw) scale(0.85);
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      z-index: 0;
+    }
+
+    .stack-container img:hover {
+      box-shadow: 0 14px 35px rgba(0,0,0,0.4);
+      transform: translateX(-50%) translateY(0) scale(1.05);
+      z-index: 100;
+    }
+
+    /* Keyframe animation for falling and stacking */
+    @keyframes fallAndStack {
+      0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-25vw) scale(0.85);
+        z-index: 0;
+      }
+      40% {
+        opacity: 1;
+        transform: translateX(calc(-50% + var(--x-offset))) translateY(0) scale(1);
+        z-index: 10;
+      }
+      60% {
+        opacity: 1;
+        transform: translateX(calc(-50% + var(--x-offset))) translateY(0) scale(1);
+        z-index: 10;
+      }
+      100% {
+        opacity: 0;
+        transform: translateX(calc(-50% + var(--x-offset))) translateY(-25vw) scale(0.85);
+        z-index: 0;
+      }
+    }
+
+    /* Different horizontal offsets (now responsive using vw) */
+    .img1 { --x-offset: 0vw; animation: fallAndStack 12s ease-in-out infinite; animation-delay: 0s; z-index: 6; }
+    .img2 { --x-offset: 6vw; animation: fallAndStack 12s ease-in-out infinite; animation-delay: 2s; z-index: 5; }
+    .img3 { --x-offset: -6vw; animation: fallAndStack 12s ease-in-out infinite; animation-delay: 4s; z-index: 4; }
+    .img4 { --x-offset: 12vw; animation: fallAndStack 12s ease-in-out infinite; animation-delay: 6s; z-index: 3; }
+    .img5 { --x-offset: -12vw; animation: fallAndStack 12s ease-in-out infinite; animation-delay: 8s; z-index: 2; }
+    .img6 { --x-offset: 0vw; animation: fallAndStack 12s ease-in-out infinite; animation-delay: 10s; z-index: 1; }
+
+    /* Smaller devices adjustment */
+    @media (max-width: 480px) {
+      .col-6-sim {
+        height: 55vw;
+        max-height: none;
+        padding-bottom: 8vw;
+      }
+      .stack-container img {
+        width: 65vw;
+        max-width: none;
+        transform: translateX(-50%) translateY(-30vw) scale(0.85);
+      }
+      .img1, .img2, .img3, .img4, .img5, .img6 {
+        --x-offset: 0vw !important; /* stack directly in center on very small */
+      }
+    }
+/*Right Side image collage Home page*/
+
+
+
+/*About Us Starts here*/
+
+/* =====================
+   DR ACADEMY – UNIQUE DESIGN (BLUE THEME)
+   ===================== */
+
+:root {
+    --dr-primary-blue: #1e3a8a;     /* deep academic blue */
+    --dr-light-blue: #3b82f6;       /* accent blue */
+}
+
+/* Sections */
+.dr-about-primary,
+.dr-md-section {
+    position: relative;
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+/* Vertical Accent */
+.dr-about-primary::before,
+.dr-md-section::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--dr-primary-blue), var(--dr-light-blue));
+}
+
+/* Floating Label */
+.dr-floating-label {
+    display: inline-block;
+    background: var(--dr-primary-blue);
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+/* Cards */
+.dr-about-card,
+.dr-md-card {
+    background: #fafafa;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+/* Titles */
+.dr-main-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.dr-main-title span {
+    color: var(--dr-primary-blue);
+}
+
+.dr-md-quote {
+    font-size: 28px;
+    font-style: italic;
+    margin: 15px 0;
+}
+
+.dr-md-name {
+    color: var(--dr-primary-blue);
+    margin-bottom: 20px;
+}
+
+/* Images */
+.dr-about-image img,
+.dr-md-image img {
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Values */
+.dr-about-values {
+    background: #f4f6fb;
+    padding: 60px 0;
+}
+
+.dr-about-values p {
+    font-size: 16px;
+    line-height: 1.9;
+    padding-left: 25px;
+    border-left: 4px solid var(--dr-primary-blue);
+    margin-bottom: 25px;
+}
+
+/* Legacy */
+.dr-about-legacy {
+    padding: 70px 0;
+    background: #ffffff;
+}
+
+.dr-about-legacy p {
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 22px;
+}
+
+/* =====================
+   MOBILE RESPONSIVE ONLY
+   ===================== */
+
+@media (max-width: 992px) {
+
+    /* Remove vertical accent on small screens */
+    .dr-about-primary::before,
+    .dr-md-section::before {
+        display: none;
+    }
+
+    .dr-about-primary,
+    .dr-md-section,
+    .dr-about-values,
+    .dr-about-legacy {
+        padding: 50px 0;
+    }
+
+    .dr-about-card,
+    .dr-md-card {
+        padding: 24px;
+        margin-bottom: 30px;
+    }
+
+    .dr-main-title {
+        font-size: 26px;
+        line-height: 1.3;
+    }
+
+    .dr-md-quote {
+        font-size: 22px;
+    }
+
+    .dr-md-name {
+        font-size: 15px;
+    }
+
+    .dr-about-values p,
+    .dr-about-legacy p {
+        font-size: 15px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 576px) {
+
+    .dr-floating-label {
+        font-size: 11px;
+        padding: 5px 14px;
+    }
+
+    .dr-main-title {
+        font-size: 24px;
+    }
+
+    .dr-md-quote {
+        font-size: 20px;
+    }
+
+    .dr-about-card p,
+    .dr-md-card p,
+    .dr-about-values p,
+    .dr-about-legacy p {
+        font-size: 14.5px;
+        line-height: 1.8;
+    }
+}
+
+
+/*About Us ends here*/
+
+
+/*Vission and Mission*/
+
+/* =========================
+   DR ACADEMY – VISION & MISSION
+   ========================= */
+
+:root {
+    --dr-blue: #1e3a8a;
+    --dr-light-blue: #e8efff;
+}
+
+/* Section */
+.dr-mission-section {
+    padding: 80px 0;
+    background: #f7f9fd;
+}
+
+/* Card */
+.dr-mission-card {
+    position: relative;
+    background: #ffffff;
+    padding: 40px 35px 35px 80px;
+    border-radius: 14px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+    height: 100%;
+}
+
+/* Highlighted card */
+.dr-mission-highlight {
+    background: var(--dr-light-blue);
+}
+
+/* Number */
+.dr-mission-number {
+    position: absolute;
+    left: 25px;
+    top: 35px;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--dr-blue);
+    opacity: 0.15;
+}
+
+/* Title */
+.dr-mission-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--dr-blue);
+}
+
+/* Text */
+.dr-mission-card p {
+    font-size: 15.5px;
+    line-height: 1.9;
+    margin-bottom: 16px;
+    text-align: justify;
+}
+
+/* Mission list */
+.dr-mission-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.dr-mission-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 14px;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.dr-mission-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--dr-blue);
+    font-size: 14px;
+}
+
+/* =====================
+   MOBILE RESPONSIVE
+   ===================== */
+
+@media (max-width: 991px) {
+
+    .dr-mission-card {
+        padding: 30px 25px 30px 65px;
+        margin-bottom: 30px;
+    }
+
+    .dr-mission-title {
+        font-size: 22px;
+    }
+
+    .dr-mission-number {
+        font-size: 34px;
+        left: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .dr-mission-section {
+        padding: 60px 0;
+    }
+
+    .dr-mission-card {
+        padding: 25px 22px 25px 55px;
+    }
+
+    .dr-mission-title {
+        font-size: 20px;
+    }
+
+    .dr-mission-card p,
+    .dr-mission-list li {
+        font-size: 14.5px;
+    }
+}
+
+
+/*Vission and Mission*/
+
+
+/*DR Academy Timeline*/
+
+
+:root {
+  --dr-blue: #1e3a8a;
+  --dr-soft-bg: #f4f6fb;
+  --dr-gold: #f9c300;
+}
+
+/* SECTION */
+.dr-journey-section {
+  padding: 80px 0;
+  background: var(--dr-soft-bg);
+  position: relative;
+}
+
+/* TITLE */
+.dr-journey-title {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: var(--dr-blue);
+}
+
+/* ROAD & CARDS WRAPPER */
+.dr-journey-road-wrapper {
+  position: relative;
+  min-height: 100%;
+}
+
+/* ROAD SVG */
+.dr-road-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* stretch to wrapper height */
+  z-index: 0;
+  opacity: 0.35;
+  pointer-events: none; /* allow clicks through SVG */
+}
+
+/* CONTENT ABOVE ROAD */
+.dr-journey-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* CARD */
+.dr-milestone-card {
+  position: relative;
+  background: #fff;
+  padding: 35px 25px 30px;
+  border-radius: 16px;
+  height: 100%;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.dr-milestone-card:hover {
+  transform: translateY(-6px);
+}
+
+/* YEAR BADGE */
+.dr-milestone-year {
+  position: absolute;
+  top: -18px;
+  left: 25px;
+  background: var(--dr-blue);
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* VARIANTS */
+.dr-milestone-card.highlight {
+  border-left: 5px solid var(--dr-gold);
+}
+
+.dr-milestone-card.success {
+  background: linear-gradient(135deg, #f9c300, #ffdd55);
+  font-weight: 600;
+}
+
+.dr-milestone-card.future {
+  background: linear-gradient(135deg, #021e40, #0a3a78);
+  color: #ffffff;
+}
+
+.dr-milestone-card.future .dr-milestone-year {
+  background: #ffffff;
+  color: #021e40;
+}
+
+/* CARD TEXT */
+.dr-milestone-card p {
+  font-size: 15.5px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ===================== MOBILE RESPONSIVE ===================== */
+@media (max-width: 768px) {
+
+  .dr-journey-title {
+    font-size: 26px;
+  }
+
+  .dr-milestone-card {
+    padding: 30px 22px;
+  }
+
+  .dr-milestone-card p {
+    font-size: 14.5px;
+  }
+
+  /* Hide road on mobile for clarity */
+  .dr-road-svg {
+    display: none;
+  }
+}
+
+
+/*DR Academy Timeline*/
+
+
+
+/*Campuses*/
+/* ===== DESKTOP & TABLET ===== */
+
+.dr-fixed-tabs-section {
+  height: calc(100vh - 110px); /* adjust if header height differs */
+  background: #f8fafc;
+}
+
+/* Tabs container */
+.dr-fixed-tabs {
+  position: sticky;
+  top: 110px; /* header height */
+  height: calc(100vh - 110px);
+  background: #ffffff;
+  border-right: 1px solid #e2e8f0;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Vertical tabs (desktop) */
+.dr-fixed-tabs .nav {
+  flex-direction: column;
+}
+
+/* Tab buttons */
+.dr-fixed-tabs .nav-link {
+  font-weight: 600;
+  color: #0f172a;
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: #e2e8f0;
+  text-align: left;
+}
+
+.dr-fixed-tabs .nav-link.active {
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  color: #ffffff;
+}
+
+/* Scrollable content */
+.dr-tab-scroll-area {
+  height: calc(100vh - 110px);
+  overflow-y: auto;
+  padding: 30px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  .dr-fixed-tabs-section {
+    height: calc(100vh - 60px);
+  }
+
+  /* Tabs become TOP FIXED BAR */
+  .dr-fixed-tabs {
+    position: sticky;
+    top: 60px; /* mobile header height */
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 10px;
+    z-index: 999;
+  }
+
+  /* Horizontal tabs */
+  .dr-fixed-tabs .nav {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .dr-fixed-tabs .nav-item {
+    flex: 0 0 auto;
+  }
+
+  .dr-fixed-tabs .nav-link {
+    margin: 0 6px;
+    padding: 10px 16px;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 14px;
+  }
+
+  /* Content scrolls under fixed tabs */
+  .dr-tab-scroll-area {
+    height: calc(100vh - 120px);
+    overflow-y: auto;
+    padding: 20px;
+  }
+}
+/*Campuses*/
+
+
+/* Facilities Available Starts here */
+
+/* Facilities Section */
+.facilities-section {
+  background-color: #ffffff;
+}
+
+.facilities-title {
+  color: red;
+  font-weight: 700;
+}
+
+.facilities-divider {
+  width: 80px;
+  margin: 10px auto 30px;
+  border-top: 3px solid red;
+}
+
+/* Facility Card */
+.facility-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Image */
+.facility-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* Overlay */
+.facility-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Content */
+.facility-content {
+  position: absolute;
+  inset: 0;
+  padding: 30px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+/* Heading */
+.facility-heading {
+  color: yellow;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.facility-heading span {
+  font-weight: 300;
+}
+
+/* Text */
+.facility-text {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Hover Effects */
+.facility-card:hover .facility-image {
+  transform: scale(1.1);
+}
+
+.facility-card:hover .facility-overlay {
+  opacity: 1;
+}
+
+.facility-card:hover .facility-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+/* Facilities Available Ends here */
+
+
+
+
+/*Click to vist Bangalore Campus*/
+
+/* Floating Circle CTA */
+.dr-campus-cta {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%) translateX(50px);
+  width: 120px;
+  height: 120px;
+  background: #e63946;
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  z-index: 9999;
+  opacity: 0;
+  transition: all 0.6s ease;
+  cursor: pointer;
+}
+
+/* Show animation */
+.dr-campus-cta.show {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Mascot on top */
+.dr-cta-mascot {
+  position: absolute;
+  top: -35px; /* half of mascot size to sit on top */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: auto;
+  z-index: 10;
+}
+
+/* Close button */
+.dr-cta-close {
+  position: absolute;
+  top: -5px;
+  right: 0px;
+  background: transparent;
+  border: none;
+  color: #000; /* black close icon */
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* CTA Text */
+.dr-cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+.dr-cta-content p {
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Hover effect */
+.dr-campus-cta:hover {
+  transform: translateY(-50%) translateX(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+/* Mobile adjustments */
+@media (max-width: 576px) {
+  .dr-campus-cta {
+    width: 100px;
+    height: 100px;
+    font-size: 12px;
+    right: 15px;
+  }
+
+  .dr-cta-mascot {
+    width: 40px;
+    height: 40px;
+    top: -20px;
+  }
+
+  .dr-cta-close {
+    font-size: 16px;
+  }
+}
+
+
+/*Click to visit Bangalore Campus*/
+
+
+/*Results Slider */
+
+.edu-container {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:40px;
+  padding:30px;
+}
+
+/* ===== SECTION ===== */
+.edu-section {
+  background:#fff;
+  padding:20px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.edu-tabs {
+  display:flex;
+  gap:10px;
+  margin-bottom:15px;
+}
+
+.edu-tab {
+  padding:8px 16px;
+  background:#e5e7eb;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+.edu-tab.edu-active {
+  background:#4f46e5;
+  color:#fff;
+}
+
+.edu-tab-panel {
+  display:none;
+}
+.edu-tab-panel.edu-active {
+  display:block;
+}
+
+/* ===== SLIDER ===== */
+.edu-slider-wrapper {
+  position: relative;
+  width:100%;
+  height:380px;
+  overflow:hidden;
+}
+
+.edu-slider-track {
+  position:absolute;
+  width:100%;
+  top:0;
+  transition:transform 0.35s ease-in-out;
+}
+
+.edu-slide {
+  height:380px;
+  padding:10px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+}
+
+.edu-slide img {
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+/* ===== LIGHTBOX ===== */
+#edu-lightbox {
+  display:none;
+  position:fixed;
+  z-index:9999;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.85);
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+
+#edu-lightbox img {
+  max-width:90%;
+  max-height:90%;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.5);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Lightbox controls */
+#edu-lightbox-close, #edu-lightbox-prev, #edu-lightbox-next {
+  position:absolute;
+  font-size:40px;
+  color:#fff;
+  cursor:pointer;
+  font-weight:bold;
+  user-select:none;
+  z-index:10000;
+}
+
+#edu-lightbox-close {
+  top:20px;
+  right:30px;
+}
+
+#edu-lightbox-prev {
+  top:50%;
+  left:30px;
+  transform:translateY(-50%);
+}
+
+#edu-lightbox-next {
+  top:50%;
+  right:30px;
+  transform:translateY(-50%);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {opacity:0; transform:scale(0.95);}
+  to {opacity:1; transform:scale(1);}
+}
+
+/* === RESPONSIVE === */
+@media (max-width:1024px){
+  .edu-container {grid-template-columns:1fr; gap:30px; padding:20px;}
+  .edu-slide {grid-template-columns:repeat(2,1fr);}
+  .edu-slide img {height:140px;}
+  .edu-tabs {flex-wrap:wrap; gap:8px;}
+  .edu-tab {flex:1 1 calc(50% - 8px); text-align:center; font-size:14px;}
+}
+
+@media (max-width:600px){
+  .edu-slide {grid-template-columns:1fr;}
+  .edu-slide img {height:120px;}
+  #edu-lightbox img {max-width:95%; max-height:80%;}
+  #edu-lightbox-close,#edu-lightbox-prev,#edu-lightbox-next {font-size:30px;}
+}
+
+/*Results Slider Ends here*/
+
+
+
+/*Courses & Programs*/
+
+.course-card {
+    background: #ffffff;
+    padding: 30px 22px;
+    border-radius: 16px;
+    height: 100%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.15);
+}
+
+.course-card h4 {
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #1e3c72;
+}
+
+.course-card p {
+    font-size: 14.5px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.course-card ul {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.course-card ul li {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.course-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #d81b60, #1e3c72);
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.course-btn:hover {
+    background: linear-gradient(135deg, #1e3c72, #d81b60);
+    color: #fff;
+}
+
+/*Courses & Programs*/
+
+
+
+/*Upcoming Events Start*/
+
+.events-section {
+    position: relative;
+}
+
+.event-card {
+    background: #020617;
+    border-radius: 18px;
+    padding: 25px;
+    display: flex;
+    gap: 20px;
+    height: 100%;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+}
+
+.event-date {
+    background: linear-gradient(135deg, #f43f5e, #9333ea);
+    border-radius: 14px;
+    min-width: 85px;
+    text-align: center;
+    padding: 12px 8px;
+    color: #fff;
+}
+
+.event-date span {
+    display: block;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.event-date small {
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.event-content h4 {
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.event-content p {
+    font-size: 14.5px;
+    color: #cbd5e1;
+    margin-bottom: 10px;
+}
+
+.event-content a {
+    color: #f43f5e;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.event-content a:hover {
+    text-decoration: underline;
+}
+
+
+/*Upcoming Events End*/
+
+
+
+
+/*Directors*/
+/* Section Background */
+.dr-directors-section {
+  background-color: #fff;
+}
+
+/* Section Titles */
+.dr-section-subtitle {
+  color: #e63946;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.dr-section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Main Director Image - Full size on all devices */
+.dr-main-director-link {
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dr-main-director-img {
+  width: 100%;
+  max-width: 400px; /* Big image */
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.dr-main-director-link:hover .dr-main-director-img {
+  transform: scale(1.05);
+}
+
+.dr-main-director-link:hover {
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+/* Main Director Text */
+.dr-director-name {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.dr-director-role {
+  font-size: 18px;
+  color: #777;
+}
+
+/* Director Info Card */
+.dr-director-info {
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.dr-director-info p {
+  text-align: justify;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Other Directors Thumbnails */
+.dr-director-thumb img {
+  width: 100%;
+  max-width: 150px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dr-director-thumb img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Mobile Devices */
+@media (max-width: 576px) {
+  .dr-main-director-img {
+    max-width: 250px;
+  }
+
+  /* 2 per row for other directors */
+  .dr-other-directors .dr-director-item {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  /* Center last item if odd number */
+  .dr-other-directors .dr-director-item:last-child {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Make first 2 images bigger */
+  .dr-other-directors .dr-director-item:nth-child(-n+2) img {
+    max-width: 160px;
+  }
+}
+
+
+
+/* Hyderabad Directors Section */
+.dr-hyderabad-directors {
+  background-color: #e9ecef; /* Slightly different from main directors */
+}
+
+/* Hyderabad Director Titles */
+.dr-hyderabad-directors .dr-director-item h5 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Mobile adjustments */
+@media (max-width: 576px) {
+  .dr-hyderabad-directors .dr-director-item {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 15px;
+  }
+
+  /* Center last director if odd number */
+  .dr-hyderabad-directors .dr-director-item:last-child {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .dr-hyderabad-directors .dr-director-item img {
+    max-width: 150px;
+  }
+}
+
+
+/*Directors End*/
+
+
+
+/* Section Titles */
+.dr-section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #e63946;
+}
+
+.dr-section-subtitle {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Campus Card */
+.dr-campus-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dr-campus-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* Inner Image */
+.dr-campus-card-inner .dr-campus-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.dr-campus-card:hover .dr-campus-img {
+  transform: scale(1.05);
+}
+
+/* Overlay */
+.dr-campus-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-align: center;
+}
+
+/* Campus Name */
+.dr-campus-overlay .dr-campus-name {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color:#fff;
+  
+}
+
+
+
+/* Campus Location */
+.dr-campus-overlay .dr-campus-location {
+  font-size: 14px;
+  opacity: 0.9;
+  color:yellow;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .dr-campus-card {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .dr-campus-card {
+    margin-bottom: 15px;
+  }
+}
+
+
+.topneet {color:red;}
+

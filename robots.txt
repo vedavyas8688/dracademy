@@ -1,0 +1,7 @@
+# Allow all search engines to crawl entire website
+
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://dracademy.edu.in/sitemap.xml

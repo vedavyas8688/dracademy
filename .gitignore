@@ -1,0 +1,12 @@
+# Local/generated files
+*.zip
+*.log
+.DS_Store
+Thumbs.db
+
+# Dependency/cache folders
+/node_modules/
+/vendor/
+
+# Local secrets
+db.php

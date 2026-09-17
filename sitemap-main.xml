@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://dracademy.edu.in/</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://dracademy.edu.in/about.php</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://dracademy.edu.in/miyapur.php</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://dracademy.edu.in/mallampet.php</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://dracademy.edu.in/neet_results.php</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://dracademy.edu.in/jee.php</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://dracademy.edu.in/eapcet.php</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://dracademy.edu.in/neet_question_papers.php</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://dracademy.edu.in/blog.php</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+
+    <url>
+        <loc>https://dracademy.edu.in/blogs/how-to-create-neet-study-plan-hyderabad-students.php</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.70</priority>
+    </url>
+
+    <url>
+        <loc>https://dracademy.edu.in/blogs/neet-preparation-for-droppers-12-month-study-strategy.php</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.70</priority>
+    </url>
+
+    <url>
+        <loc>https://dracademy.edu.in/blogs/how-to-balance-intermediate-studies-and-neet-preparation-hyderabad.php</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.70</priority>
+    </url>
+
+    <url>
+        <loc>https://dracademy.edu.in/blogs/jee-main-preparation-simple-study-plan-hyderabad-students.php</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.70</priority>
+    </url>
+
+    <url>
+        <loc>https://dracademy.edu.in/blogs/how-to-choose-right-neet-coaching-institute-hyderabad.php</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.70</priority>
+    </url>
+    
+    <url>
+        <loc>https://dracademy.edu.in/contact.php</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+
+</urlset>

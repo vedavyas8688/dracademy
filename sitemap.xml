@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Main Website -->
+    <sitemap>
+        <loc>https://dracademy.edu.in/sitemap-main.xml</loc>
+    </sitemap>
+
+    <!-- NEET Pages -->
+    <sitemap>
+        <loc>https://dracademy.edu.in/seo/junior/sitemap-locations.xml</loc>
+    </sitemap>
+
+    
+
+</sitemapindex>
