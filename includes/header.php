@@ -1,5 +1,9 @@
 <?php
 $current_page = basename($_SERVER['PHP_SELF']);
+$current_dir = basename(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '')));
+$is_blog_context = ($current_dir === 'blogs');
+$dr_header_base = $is_blog_context ? '../' : '';
+$blog_active_class = ($current_page === 'blog.php' || $is_blog_context) ? 'active' : '';
 ?>
 <style>
 *{
@@ -349,8 +353,8 @@ body{
     <div class="dr-nav-wrap">
         <div class="dr-nav-inner">
 
-            <a href="index.php" class="dr-logo">
-                <img src="assets/images/logo.png" alt="DR Academy">
+            <a href="<?php echo $dr_header_base; ?>index.php" class="dr-logo">
+                <img src="<?php echo $dr_header_base; ?>assets/images/logo.png" alt="DR Academy">
             </a>
 
             <button class="dr-mobile-btn" id="drMobileBtn" type="button">
@@ -362,19 +366,19 @@ body{
             <ul class="dr-menu" id="drMenu">
 
                 <li class="<?php echo ($current_page=='index.php')?'active':''; ?>">
-                    <a href="index.php">HOME</a>
+                    <a href="<?php echo $dr_header_base; ?>index.php">HOME</a>
                 </li>
 
                 <li class="<?php echo ($current_page=='about.php')?'active':''; ?>">
-                    <a href="about.php">ABOUT US</a>
+                    <a href="<?php echo $dr_header_base; ?>about.php">ABOUT US</a>
                 </li>
 
                 <li class="dr-dropdown <?php echo in_array($current_page,['miyapur.php','mallampet.php'])?'active':''; ?>">
                     <a href="javascript:void(0)">OUR CAMPUSES <span class="dr-arrow">▾</span></a>
 
                     <ul class="dr-dropdown-menu">
-                        <li><a href="miyapur.php">MIYAPUR</a></li>
-                        <li><a href="mallampet.php">MALLAMPET</a></li>
+                        <li><a href="<?php echo $dr_header_base; ?>miyapur.php">MIYAPUR</a></li>
+                        <li><a href="<?php echo $dr_header_base; ?>mallampet.php">MALLAMPET</a></li>
                         <li><a href="https://dracademy.co.in/" target="_blank">BENGALURU</a></li>
                     </ul>
                 </li>
@@ -383,9 +387,9 @@ body{
                     <a href="javascript:void(0)">RESULTS <span class="dr-arrow">▾</span></a>
 
                     <ul class="dr-dropdown-menu">
-                        <li><a href="neet_results.php">NEET</a></li>
-                        <li><a href="jee.php">JEE</a></li>
-                        <li><a href="eapcet.php">EAPCET</a></li>
+                        <li><a href="<?php echo $dr_header_base; ?>neet_results.php">NEET</a></li>
+                        <li><a href="<?php echo $dr_header_base; ?>jee.php">JEE</a></li>
+                        <li><a href="<?php echo $dr_header_base; ?>eapcet.php">EAPCET</a></li>
                     </ul>
                 </li>
 
@@ -393,16 +397,16 @@ body{
                     <a href="javascript:void(0)">DOWNLOADS <span class="dr-arrow">▾</span></a>
 
                     <ul class="dr-dropdown-menu">
-                        <li><a href="neet_question_papers.php">NEET QUESTION PAPERS</a></li>
+                        <li><a href="<?php echo $dr_header_base; ?>neet_question_papers.php">NEET QUESTION PAPERS</a></li>
                     </ul>
                 </li>
 
-                <li class="<?php echo ($current_page=='blog.php')?'active':''; ?>">
-                    <a href="blog.php">BLOG</a>
+                <li class="<?php echo $blog_active_class; ?>">
+                    <a href="<?php echo $dr_header_base; ?>blog.php">BLOG</a>
                 </li>
 
                 <li class="<?php echo ($current_page=='contact.php')?'active':''; ?>">
-                    <a href="contact.php">CONTACT</a>
+                    <a href="<?php echo $dr_header_base; ?>contact.php">CONTACT</a>
                 </li>
 
                 <li class="dr-menu-exam-btn">

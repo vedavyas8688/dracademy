@@ -131,7 +131,7 @@ $encodedTitle = urlencode($blogTitle);
   </style>
 </head>
 <body>
-<?php include 'includes/blog_header.php'; ?>
+<?php include __DIR__ . '/../includes/header.php'; ?>
 <main class="blog-page">
   <div class="blog-wrap">
     <div class="blog-top-nav">

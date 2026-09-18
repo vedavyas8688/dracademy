@@ -125,8 +125,6 @@
     const grid = document.getElementById('draRecentBlogsGrid');
     if (!grid) return;
 
-    const currentBlogFile = window.location.pathname.split('/').pop().toLowerCase();
-
     function escapeHtml(text) {
       const div = document.createElement('div');
       div.textContent = text || '';
@@ -187,9 +185,7 @@
           throw new Error('Invalid blog feed');
         }
 
-        const recentBlogs = sortRecentBlogs(data)
-          .filter(blog => String((blog.url || '').split('/').pop()).toLowerCase() !== currentBlogFile)
-          .slice(0, 5);
+        const recentBlogs = sortRecentBlogs(data).slice(0, 5);
 
         renderRecentBlogs(recentBlogs);
       })

@@ -82,9 +82,18 @@ function titleFromFileName($fileNameWithoutExt) {
 
 $files = scandir($blogsDir);
 $blogs = [];
+$hiddenBlogFiles = [
+    'Re-neet-2026.php',
+    'Top-IIT-JEE-Coaching-in-Hyderabad.php',
+    'Why-DR-Academy-is-the-Best-NEET-&-IIT-JEE-Coaching-in-Hyderabad.php',
+];
 
 foreach ($files as $file) {
     if ($file === '.' || $file === '..' || $file === 'blog_stats.json') {
+        continue;
+    }
+
+    if (in_array($file, $hiddenBlogFiles, true)) {
         continue;
     }
 
