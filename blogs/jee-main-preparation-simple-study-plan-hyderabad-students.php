@@ -112,7 +112,8 @@ $encodedTitle = urlencode($blogTitle);
     .blog-head{padding:34px 34px 16px;}
     .blog-kicker{display:inline-flex;gap:10px;align-items:center;color:#1262b3;background:#eef6ff;border-radius:999px;padding:8px 14px;font-size:14px;font-weight:700;margin-bottom:18px;}
     .blog-title{font-size:clamp(32px,4vw,48px);line-height:1.15;color:#102c4c;margin:0 0 18px;font-weight:800;}
-    .blog-desc{font-size:18px;line-height:1.7;color:#54677a;margin:0;}
+    .blog-content a{background:#0f5cad;color:#ffffff;text-decoration:none;font-weight:800;padding:3px 9px;border-radius:999px;box-decoration-break:clone;-webkit-box-decoration-break:clone;}
+    .blog-content a:hover{background:#093d7a;color:#ffffff;}
     .blog-featured-image{margin:28px 0;border-radius:16px;overflow:hidden;background:#eaf1f8;}
     .blog-featured-image img{display:block;width:100%;height:auto;}
     .blog-content{padding:0 34px 34px;font-size:17px;line-height:1.82;color:#263b4f;}
@@ -144,7 +145,7 @@ $encodedTitle = urlencode($blogTitle);
           <div class="blog-kicker"><i class="fa-regular fa-calendar"></i><?php echo date('d M Y', strtotime($blogDate)); ?></div>
           <a class="blog-head-back" href="../blog.php">All Blogs</a>
         </div>
-        <p class="blog-desc"><?php echo htmlspecialchars($blogDescription, ENT_QUOTES, 'UTF-8'); ?></p>
+        <h1 class="blog-title"><?php echo htmlspecialchars($blogTitle, ENT_QUOTES, 'UTF-8'); ?></h1>
         <div class="blog-top-meta">
           <div class="blog-stat-row">
             <span class="blog-stat-pill"><i class="fa-solid fa-eye"></i> Views <span id="viewCount"><?php echo (int)$statsData[$blogSlug]['views']; ?></span></span>
@@ -160,10 +161,9 @@ $encodedTitle = urlencode($blogTitle);
         </div>
       </header>
       <section class="blog-content">
-<h1 class="blog-title">JEE Main Preparation: A Simple Study Plan for Hyderabad Students</h1>
 <div class="blog-featured-image"><img src="images/tmbnl/jee-main-preparation-simple-study-plan-hyderabad-students.webp" alt="JEE Main Preparation: A Simple Study Plan for Hyderabad Students" loading="eager"></div>
 <p>Preparing for JEE Main can feel overwhelming, especially when you are managing Intermediate studies, college assignments, coaching and your own revision at the same time. The problem is often not a lack of effort—it is having too many things to study without a clear plan.</p>
-<p>For students looking for structured guidance, JEE Main Coaching in Hyderabad can provide an organized learning environment. But coaching alone is not enough. Your daily self-study, revision, question practice and ability to learn from mistakes will have a major impact on your preparation.</p>
+<p>For students looking for structured guidance, <a href="https://dracademy.edu.in/index.php">JEE Main Coaching in Hyderabad</a> can provide an organized learning environment. But coaching alone is not enough. Your daily self-study, revision, question practice and ability to learn from mistakes will have a major impact on your preparation.</p>
 <p>A good JEE Main study plan should be realistic enough to follow every day and flexible enough to change when your academic workload increases.</p>
 <h2>What Makes JEE Main Preparation Different?</h2>
 <p>JEE Main is not simply about remembering formulas or finishing chapters. You need to understand concepts and then apply them to questions within a limited amount of time.</p>
@@ -289,10 +289,10 @@ $encodedTitle = urlencode($blogTitle);
 <li>Revise it later.</li>
 <li>This approach can reduce unnecessary repetition.</li>
 </ul>
-<p>Students who prefer a combined academic approach can also consider Integrated JEE Coaching in Hyderabad when evaluating their preparation options.</p>
+<p>Students who prefer a combined academic approach can also consider <a href="https://dracademy.edu.in/about.php">Integrated JEE Coaching in Hyderabad</a> when evaluating their preparation options.</p>
 <h2>Should You Choose Long-Term JEE Coaching?</h2>
 <p>Long-term preparation can be useful for students who want consistent academic guidance over an extended period.</p>
-<p>When comparing JEE Long Term Coaching Centres in Hyderabad, don&#x27;t look only at the duration of the program.</p>
+<p>When comparing <a href="https://dracademy.edu.in/index.php">JEE Long Term Coaching Centres in Hyderabad</a>, don&#x27;t look only at the duration of the program.</p>
 <p>Consider:</p>
 <ul>
 <li>Teaching quality</li>
@@ -307,7 +307,7 @@ $encodedTitle = urlencode($blogTitle);
 </ul>
 <h2>How to Choose JEE Coaching in Hyderabad</h2>
 <p>Choosing a coaching institute is an important decision, but it should not be based only on advertisements or claims about results.</p>
-<p>Before joining JEE Coaching in Hyderabad, students and parents can look at the overall academic system.</p>
+<p>Before joining <a href="https://dracademy.edu.in/jee.php">JEE Coaching in Hyderabad</a>, students and parents can look at the overall academic system.</p>
 <p>Ask about:</p>
 <ul>
 <li>Faculty experience</li>
@@ -381,7 +381,7 @@ $encodedTitle = urlencode($blogTitle);
 <p>The exact schedule matters less than following it consistently.</p>
 <h2>Why Choose DR Academy?</h2>
 <p>JEE preparation requires more than completing a syllabus. Students need regular practice, academic guidance, testing and a system that helps them identify where they need improvement.</p>
-<p>DR Academy provides a structured academic environment for students preparing for competitive examinations alongside their Intermediate studies. Its Hyderabad-focused programs include options for students following different preparation requirements.</p>
+<p><a href="https://dracademy.edu.in/index.php">DR Academy</a> provides a structured academic environment for students preparing for competitive examinations alongside their Intermediate studies. Its Hyderabad-focused programs include options for students following different preparation requirements.</p>
 <p>For students and parents comparing coaching institutes, the important question is not simply which institute has the biggest claims. It is whether the academic approach, faculty support, testing system and learning environment are suitable for the student&#x27;s individual preparation needs.</p>
 <h2>Frequently Asked Questions</h2>
 <h3>1. How should I start preparing for JEE Main?</h3>
@@ -397,10 +397,10 @@ $encodedTitle = urlencode($blogTitle);
 <h2>Conclusion</h2>
 <p>A good JEE Main preparation plan doesn&#x27;t need to be complicated. Start with your current level, set realistic weekly targets, understand concepts properly and spend enough time solving questions. Keep revision running alongside new topics and use mock tests to understand where you are improving and where you still need work.</p>
 <p>Most importantly, don&#x27;t compare your daily routine with someone else&#x27;s. A plan that you can follow consistently is far more useful than a perfect timetable that lasts only a few days.</p>
-<p>If you&#x27;re looking for structured guidance, JEE Coaching Admission in Hyderabad is a practical next step to explore the available preparation options at DR Academy.</p>
+<p>If you&#x27;re looking for structured guidance, <a href="https://dracademy.edu.in/contact.php">JEE Coaching Admission in Hyderabad</a> is a practical next step to explore the available preparation options at DR Academy.</p>
 <h2>Start Your JEE Main Preparation with the Right Plan</h2>
 <p>JEE Main preparation becomes easier when you have a clear routine, consistent practice and the right academic support. If you&#x27;re planning to begin or strengthen your preparation, DR Academy can help you choose a structured approach based on your academic needs.</p>
-<p>Take the next step toward your JEE goal. Connect with DR Academy today and explore the right preparation program for you.</p>
+<p>Take the next step toward your JEE goal. <a href="https://dracademy.edu.in/contact.php">Connect with DR Academy today</a> and explore the right preparation program for you.</p>
         <div class="blog-actions">
           <button type="button" id="likeBtn"><i class="fa-regular fa-thumbs-up"></i> Like <span id="likesCount"><?php echo (int)$statsData[$blogSlug]['likes']; ?></span></button>
           <button type="button" class="share" id="shareBtn"><i class="fa-solid fa-share-nodes"></i> Share <span id="sharesCount"><?php echo (int)$statsData[$blogSlug]['shares']; ?></span></button>
